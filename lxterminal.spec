@@ -50,5 +50,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/%{name}*
 %{_pixmapsdir}/%{name}.png
 %{_datadir}/%{name}
-%lang(af) %{_datadir}/locale/af/LC_MESSAGES/lxterminal.mo
-%lang(ps) %{_datadir}/locale/ps/LC_MESSAGES/lxterminal.mo
