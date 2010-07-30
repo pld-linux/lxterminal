@@ -7,8 +7,12 @@ Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
 # Source0-md5:	97874f553493cbca5082b8d9ef99072e
 URL:		http://wiki.lxde.org/en/LXTerminal
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel
+BuildRequires:	intltool
+BuildRequires:	libtool
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	vte-devel
