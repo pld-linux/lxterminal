@@ -1,21 +1,33 @@
+#
+# Conditional build:
+%bcond_with		gtk3		# build GTK+3 disables GTK+2
+%bcond_without		gtk2	# build with GTK+2
+
+%if %{with gtk3}
+%undefine	with_gtk2
+%endif
+
 Summary:	LXTerminal is the standard terminal emulator of LXDE
 Name:		lxterminal
-Version:	0.1.9
+Version:	0.1.11
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
-# Source0-md5:	cb10cc667611dce3c141294712049c43
+# Source0-md5:	fd9140b45c0f28d021253c4aeb8c4aea
 URL:		http://wiki.lxde.org/en/LXTerminal
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel
+%{?with_gtk2:BuildRequires:	gtk+2-devel}
+%{?with_gtk3:BuildRequires:	gtk+3-devel}
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
-BuildRequires:	vte-devel
+%{?with_gtk3:BuildRequires:	vte-devel}
+%{?with_gtk2:BuildRequires:	vte0-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,16 +42,16 @@ LXTerminal is the standard terminal emulator of LXDE.
 %{__autoheader}
 %{__autoconf}
 %{__intltoolize}
-%configure
+%configure \
+	%{?with_gtk3:--enable-gtk3}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{frp,ur_PK}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{frp,ur_PK}
 
 %find_lang %{name}
 
