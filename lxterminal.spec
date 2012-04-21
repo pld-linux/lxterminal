@@ -10,11 +10,12 @@
 Summary:	LXTerminal is the standard terminal emulator of LXDE
 Name:		lxterminal
 Version:	0.1.11
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
 # Source0-md5:	fd9140b45c0f28d021253c4aeb8c4aea
+Patch0:		wordseps.patch
 URL:		http://wiki.lxde.org/en/LXTerminal
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -35,6 +36,7 @@ LXTerminal is the standard terminal emulator of LXDE.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -52,11 +54,11 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # duplicate of ur
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ur_PK
 # unsupported by glibc
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/frp
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/frp
 
-mv $RPM_BUILD_ROOT%{_datadir}/locale/tt{_RU,}
+mv $RPM_BUILD_ROOT%{_localedir}/tt{_RU,}
 
 %find_lang %{name}
 
