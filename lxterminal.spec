@@ -10,7 +10,7 @@
 Summary:	LXTerminal is the standard terminal emulator of LXDE
 Name:		lxterminal
 Version:	0.1.11
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
@@ -45,6 +45,7 @@ LXTerminal is the standard terminal emulator of LXDE.
 %{__autoconf}
 %{__intltoolize}
 %configure \
+	--disable-silent-rules \
 	%{?with_gtk3:--enable-gtk3}
 %{__make}
 
