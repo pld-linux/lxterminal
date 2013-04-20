@@ -38,6 +38,8 @@ LXTerminal is the standard terminal emulator of LXDE.
 %setup -q
 %patch0 -p1
 
+%{__sed} -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,' configure.ac
+
 %build
 %{__libtoolize}
 %{__aclocal}
