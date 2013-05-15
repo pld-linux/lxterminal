@@ -1,6 +1,8 @@
-similar patch:
-http://git.pld-linux.org/?p=packages/kdebase.git;a=blob;f=kdebase-konsole-wordseps.patch
-http://git.pld-linux.org/?p=packages/Terminal.git;a=blob;f=wordseps.patch
+similar patches:
+- konsole: http://git.pld-linux.org/?p=packages/kdebase.git;a=blob;f=kdebase-konsole-wordseps.patch
+- Terminal: http://git.pld-linux.org/?p=packages/Terminal.git;a=blob;f=wordseps.patch
+- Gnome-terminal: http://git.pld-linux.org/?p=packages/gnome-terminal.git;a=blob;f=wordseps.patch
+- mate-terminal: http://git.pld-linux.org/?p=packages/mate-terminal.git;a=blob;f=wordseps.patch
 
 --- lxterminal-0.1.11/src/setting.c~	2012-04-21 22:50:34.000000000 +0300
 +++ lxterminal-0.1.11/src/setting.c	2012-04-21 22:50:36.003908733 +0300
