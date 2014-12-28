@@ -19,7 +19,7 @@ Patch0:		wordseps.patch
 URL:		http://wiki.lxde.org/en/LXTerminal
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel
 %{?with_gtk2:BuildRequires:	gtk+2-devel}
 %{?with_gtk3:BuildRequires:	gtk+3-devel}
