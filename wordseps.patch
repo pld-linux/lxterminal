@@ -4,14 +4,14 @@ similar patches:
 - Gnome-terminal: http://git.pld-linux.org/?p=packages/gnome-terminal.git;a=blob;f=wordseps.patch
 - mate-terminal: http://git.pld-linux.org/?p=packages/mate-terminal.git;a=blob;f=wordseps.patch
 
---- lxterminal-0.1.11/src/setting.c~	2012-04-21 22:50:34.000000000 +0300
-+++ lxterminal-0.1.11/src/setting.c	2012-04-21 22:50:36.003908733 +0300
-@@ -123,7 +123,7 @@
-     if (setting->tab_position == NULL)
-         setting->tab_position = g_strdup("top");
+--- lxterminal-0.2.0/src/setting.c~	2014-10-21 18:29:18.000000000 +0300
++++ lxterminal-0.2.0/src/setting.c	2015-07-27 13:37:23.327432384 +0300
+@@ -307,7 +307,7 @@
+     }
      if (setting->word_selection_characters == NULL)
+     {
 -        setting->word_selection_characters = g_strdup("-A-Za-z0-9,./?%&#:_~");
 +        setting->word_selection_characters = g_strdup("-A-Za-z0-9,./?%&#:_~=+;@");
-     if (setting->background_alpha == NULL)
-         setting->background_alpha = 65535;
-     return setting;
+     }
+     
+     /* Default configuration for shortcut group settings. */
