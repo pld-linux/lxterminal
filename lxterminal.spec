@@ -14,13 +14,12 @@ Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 Patch0:		wordseps.patch
 URL:		http://www.lxde.org/
 BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.6.0
 %{!?with_gtk3:BuildRequires:	gtk+2-devel >= 1:2.18.0}
 %{?with_gtk3:BuildRequires:	gtk+3-devel >= 3.0.0}
 BuildRequires:	intltool
-BuildRequires:	libtool
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -49,10 +48,9 @@ LXTerminal to standardowy emulator terminala dla środowiska LXDE.
 
 %build
 %{__intltoolize}
-%{__libtoolize}
 %{__aclocal}
-%{__autoheader}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure \
 	--disable-silent-rules \
