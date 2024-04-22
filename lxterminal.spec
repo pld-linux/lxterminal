@@ -1,12 +1,12 @@
 #
 # Conditional build:
-%bcond_with	gtk3	# use GTK+3 instead of GTK+2
+%bcond_without	gtk3	# use GTK+3 instead of GTK+2
 
 Summary:	LXTerminal - the standard terminal emulator of LXDE
 Summary(pl.UTF-8):	LXTerminal - standardowy emulator terminala dla LXDE
 Name:		lxterminal
 Version:	0.4.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
