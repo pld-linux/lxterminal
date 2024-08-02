@@ -6,12 +6,13 @@ Summary:	LXTerminal - the standard terminal emulator of LXDE
 Summary(pl.UTF-8):	LXTerminal - standardowy emulator terminala dla LXDE
 Name:		lxterminal
 Version:	0.4.0
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 # Source0-md5:	7938dbd50e3826c11f4735a742b278d3
 Patch0:		wordseps.patch
+Patch1:		gcc14-incompatible-pointer-types.patch
 URL:		http://www.lxde.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.11
@@ -44,6 +45,7 @@ LXTerminal to standardowy emulator terminala dla środowiska LXDE.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 %{__sed} -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,' configure.ac
 
 %build
